@@ -2,8 +2,8 @@
 
 export default function Home() {
   return (
-    <div className="">
-      ho
+    <div className="pt-20">
+      
     </div>
   );
 }
