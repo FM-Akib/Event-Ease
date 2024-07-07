@@ -1,8 +1,16 @@
+
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { auth } from '@/app/firebase/config';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
+
 
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+  console.log(user)
   return (
     <nav className="fixed z-40 w-full border-b bg-[#FEFCE8] md:absolute ">
       <div className="container m-auto px-2 md:px-12 lg:px-7">
@@ -69,7 +77,15 @@ const Navbar = () => {
             </div>
           </div>
           <div className="block-endnav w-max flex items-center gap-4">
-            <Link href="/login">
+           {
+            user?<button 
+            onClick={()=> signOut(auth)}
+            type="button"
+            title="Start buying"
+            className="hidden sm:block w-full py-3 px-6 text-center rounded-full transition bg-gray-900 hover:bg-cyan-500 active:bg-cyan-600 focus:bg-cyan-800 sm:w-max"
+          >
+            <span className="block text-white text-sm">Logout</span>
+          </button>:<Link href="/login">
             <button
               type="button"
               title="Start buying"
@@ -78,6 +94,10 @@ const Navbar = () => {
               <span className="block text-white text-sm">Login</span>
             </button>
             </Link>
+           }
+            
+           
+           
             <div className="flex items-center md:hidden max-h-10">
               <label
                 role="button"

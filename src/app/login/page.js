@@ -1,8 +1,33 @@
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import { FcGoogle } from "react-icons/fc";
-const page = () => {
+import {useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth'
+import { auth } from '../firebase/config';
+import { useRouter } from 'next/navigation';
+
+
+
+const LoginPage = () => {
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const router = useRouter()
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth)
+
+
+  const onSubmit = async (data) => {
+    // console.log(data);
+    try{
+      const res = await signInWithEmailAndPassword(data.email, data.password);
+      console.log(res);
+      router.push('/')
+
+    }catch(error){
+      console.error(error);
+    }
+  };
     return (
 
       <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
@@ -28,20 +53,26 @@ const page = () => {
              
             </div>
       
-            <form action="" className="mt-10 space-y-8 ">
+            <form action="" className="mt-10 space-y-8 " onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <div className="relative before:absolute before:bottom-0 before:h-0.5 before:left-0 before:origin-right focus-within:before:origin-left before:right-0 before:scale-x-0 before:m-auto before:bg-sky-400  focus-within:before:!scale-x-100 focus-within:invalid:before:bg-red-400 before:transition before:duration-300">
-                  <input id="" type="email" placeholder="Your email or user name" className="w-full bg-transparent pb-3  border-b border-gray-300  outline-none  invalid:border-red-400 transition"/>
+                  <input name="email"
+                        {...register("email", { required: true })}
+                        type="email"
+                        required placeholder="Your email or user name" className="w-full bg-transparent pb-3  border-b border-gray-300  outline-none  invalid:border-red-400 transition"/>
+                      {errors.email && <span>This field is required</span>}
                 </div>
               </div>
       
               <div className="flex flex-col items-end">
                 <div className="w-full relative before:absolute before:bottom-0 before:h-0.5 before:left-0 before:origin-right focus-within:before:origin-left before:right-0 before:scale-x-0 before:m-auto before:bg-sky-400  focus-within:before:!scale-x-100 focus-within:invalid:before:bg-red-400 before:transition before:duration-300">
-                  <input id="" type="Your password" placeholder="Your answer" className="w-full bg-transparent pb-3  border-b border-gray-300  outline-none  invalid:border-red-400 transition"/>
+                  <input {...register("password", { required: true })}
+                        name="password"
+                        type="password"
+                        required placeholder="Your answer" className="w-full bg-transparent pb-3  border-b border-gray-300  outline-none  invalid:border-red-400 transition"/>
+                  {errors.password && <span>This field is required</span>}
                 </div>
-                {/* <button type="reset" className="-mr-3 w-max p-3">
-                  <span className="text-sm tracking-wide text-sky-600 ">Forgot password ?</span>
-                </button> */}
+                
               </div>
       
               <div>
@@ -68,4 +99,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default LoginPage;
