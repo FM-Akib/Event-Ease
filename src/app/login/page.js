@@ -7,6 +7,8 @@ import { FcGoogle } from "react-icons/fc";
 import {useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth'
 import { auth } from '../firebase/config';
 import { useRouter } from 'next/navigation';
+import {  signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+const provider = new GoogleAuthProvider();
 
 
 
@@ -41,7 +43,7 @@ const LoginPage = () => {
           <div className="mt-12 rounded-3xl border bg-gray-50/85 -mx-6 sm:-mx-10 p-8 sm:p-10 ">
             <h3 className="text-2xl font-semibold text-gray-700 ">Login to your account</h3>
             <div className="mt-12 flex flex-wrap ">
-              <button
+              <button onClick={()=>{signInWithPopup(auth, provider)}}
                 className="w-full h-11  rounded-xl border border-gray-300/75 bg-white px-6 transition active:bg-gray-50 "
               >
                 <div className="w-full mx-auto flex items-center justify-center space-x-4">

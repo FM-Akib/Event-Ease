@@ -4,10 +4,16 @@ import { useForm } from 'react-hook-form';
 import { FcGoogle } from "react-icons/fc";
 import { auth } from '../firebase/config';
 import {useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth'
-const Page = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+import {  signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
+const SignupPage = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const provider = new GoogleAuthProvider();
   const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
+  // const [signInWithPopup] =  useSignInWithPopup(auth);
+
+
+
 
   const onSubmit = async (data) => {
     // console.log(data);
@@ -28,7 +34,7 @@ const Page = () => {
               <div className="mt-12 rounded-3xl border bg-gray-50/85 -mx-6 sm:-mx-10 p-8 sm:p-10">
                 <h3 className="text-2xl font-semibold text-gray-700">Create a new account</h3>
                 <div className="mt-12 flex flex-wrap">
-                  <button className="w-full h-11 rounded-xl border border-gray-300/75 bg-white px-6 transition active:bg-gray-50">
+                  <button onClick={()=>{signInWithPopup(auth, provider)}} className="w-full h-11 rounded-xl border border-gray-300/75 bg-white px-6 transition active:bg-gray-50">
                     <div className="w-full mx-auto flex items-center justify-center space-x-4">
                       <span className="w-max text-sm font-semibold tracking-wide text-cyan-700 flex items-center justify-center">
                         <FcGoogle className="mr-1 text-2xl" /> Sign up with Google
@@ -99,4 +105,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default SignupPage;

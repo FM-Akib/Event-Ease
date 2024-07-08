@@ -10,7 +10,7 @@ import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
-  console.log(user)
+  // console.log(user)
   return (
     <nav className="fixed z-40 w-full border-b bg-[#FEFCE8] md:absolute ">
       <div className="container m-auto px-2 md:px-12 lg:px-7">
