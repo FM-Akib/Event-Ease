@@ -2,15 +2,17 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { auth } from '@/app/firebase/config';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
+// import { useRouter } from 'next/navigation';
 
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
-  // console.log(user)
+  
+
   return (
     <nav className="fixed z-40 w-full border-b bg-[#FEFCE8] md:absolute ">
       <div className="container m-auto px-2 md:px-12 lg:px-7">
@@ -39,6 +41,7 @@ const Navbar = () => {
           >
             <div className="z-20 flex gap-8 md:gap-0 flex-col md:flex-row md:items-center w-full">
               <ul className="pt-28 lg:pt-0 gap-8 tracking-wide font-medium flex-col flex md:flex-row md:gap-0">
+               
                 <li className="max-w-max">
                   <Link href="/" className="block md:px-3">
                     <div className="relative text-cyan-800 before:absolute before:-bottom-2 md:before:-bottom-7 before:w-full before:h-0.5 before:mx-auto before:mt-auto before:rounded-full before:bg-cyan-800">
@@ -46,15 +49,17 @@ const Navbar = () => {
                     </div>
                   </Link>
                 </li>
+
                 <li className="max-w-max">
-                  <a href="#" className="block md:px-3 group">
+                  <Link href="/hall" className="block md:px-3 group">
                     <div className="relative text-gray-600 before:absolute before:-bottom-2 md:before:-bottom-7 before:origin-left before:w-full before:h-0.5 before:mx-auto before:mt-auto before:rounded-full before:bg-cyan-800 before:transition before:scale-x-0 group-hover:before:scale-x-100">
                       <span className="transition group-hover:text-cyan-700">
-                        Adidas
+                        Hall
                       </span>
                     </div>
-                  </a>
+                  </Link>
                 </li>
+
                 <li className="max-w-max">
                   <a href="#" className="block md:px-3 group">
                     <div className="relative text-gray-600 before:absolute before:-bottom-2 md:before:-bottom-7 before:origin-left before:w-full before:h-0.5 before:mx-auto before:mt-auto before:rounded-full before:bg-cyan-800 before:transition before:scale-x-0 group-hover:before:scale-x-100">
@@ -64,6 +69,7 @@ const Navbar = () => {
                     </div>
                   </a>
                 </li>
+                
               </ul>
               <div className="flex sm:hidden pt-4 w-full">
                 <button

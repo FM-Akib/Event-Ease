@@ -1,0 +1,66 @@
+[
+    {
+      "hallName": "BGB Banquet Hall",
+      "guestCapacity": 2000,
+      "tableBatch": 800,
+      "areas": 36000,
+      "parkingAreas": 300,
+      "images": ["https://i.ibb.co/drCsdpw/images.jpg", "https://i.ibb.co/ZXvCh5B/images-2.jpg","https://i.ibb.co/3CPMHTb/images-1.jpg,https://i.ibb.co/hVSj4QT/images-3.jpg","https://i.ibb.co/JsMpZ3J/image.webp"],
+      "video": "https://youtu.be/oYQZep2p8RQ?si=wPcIPmmJWy3GhQyw",
+      "location": "Road 2, Dhanmondi, Dhaka-1205",
+      "city": "Dhaka",
+      "area": "Dhanmondi",
+      "type": "Community Center",
+      "shift": "Noon, Night",
+      "facilities": ["AC", "Catering", "CCTV", "Cooking", "Electric Generator", "Lift", "Parking", "WiFi"],
+      "price": {
+        "day": 250000,
+        "nigth": 350000,
+        "ac": 200000,
+        "non-ac": 150000,
+        "discount": 10
+      },
+      "description": "BGB Banquet Hall rent, price, details. বিজিবি ব্যাঙ্কুয়েট হল Shimanto Shambhar Level-4, Road 2, Dhanmondi, Dhaka-1205. Inside Shimanto Shambhar Market.",
+      "history": "Established in 1990, this hall has hosted numerous prestigious events.",
+      "floor": 2,
+      "dedicatedBuilding": "yes",
+      "food": "Continental",
+      "items": ["Salad", "Soup", "Main Course", "Dessert"],
+      "cost": "Varies",
+      "contact": "TANJIR AHMED BISWAS - +8801714116155 ",
+      "website": "https://bgbbanquethall.com.bd/"
+    },
+    {
+        "hallName": "Raowa Convention Center",
+        "guestCapacity": 1200,
+        "tableBatch": 300,
+        "areas": 26689,
+        "parkingAreas": 300,
+        "images": ["https://i.ibb.co/w7DysBW/download-2.jpg", "https://i.ibb.co/LNW1z2Y/download-3.jpg","https://i.ibb.co/Qdc1s3F/download-4.jpg","https://i.ibb.co/xFYThXR/download.jpg","https://i.ibb.co/m0xyLJC/download-1.jpg"],
+        "video": "https://youtu.be/nANOu-52Qp4?si=bmpOLt3ZU9JNWMwp",
+        "location": "Mohakhali DOHS, VIP Road, Dhaka-1206",
+        "city": "Dhaka",
+        "area": "Mohakhali",
+        "shift": "Noon, Night",
+        "type": "Community Center",
+        "facilities": ["AC", "Catering", "CCTV", "Cooking", "Electric Generator", "Lift", "Parking", "WiFi"],
+        "price": {
+          "day": 250000,
+          "nigth": 350000,
+          "ac": 200000,
+          "non-ac": 150000,
+          "discount": 10
+        },
+        "description": "Raowa Convention Center rent, price, details. রাওয়া কনভেনশন সেন্টার Mohakhali, VIP Road, Dhaka 1206. RETIRED ARMED FORCES OFFICER’S WELFARE ASSOCIATION.",
+        "history": "Established in 1990, this hall has hosted numerous prestigious events.",
+        "floor": 2,
+        "dedicatedBuilding": "yes",
+        "food": "Bangladeshi/Chinese (Their food only)",
+        "items": ["Salad", "Soup", "Main Course", "Dessert"],
+        "cost": "Varies",
+        "contact": "Support (RAOWA)  +8802-9860763",
+        "website": "https://bgbbanquethall.com.bd/"
+      }
+  
+  ]
+  
