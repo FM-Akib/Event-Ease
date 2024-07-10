@@ -28,7 +28,7 @@ const HallPage = async() => {
 
     { 
             data.map((hall) => (
-                <div key={hall._id} class="mb-5 group relative -mx-4 sm:-mx-8 p-6 sm:p-8 rounded-3xl bg-white  border border-transparent hover:border-gray-100  shadow-2xl shadow-transparent hover:shadow-gray-600/10 sm:gap-8 sm:flex transition duration-300 hover:z-10">
+                <div key={hall._id} class="mb-5   group relative -mx-4 sm:-mx-8 p-6 sm:p-8 rounded-3xl bg-white  border border-transparent hover:border-gray-100  shadow-2xl shadow-transparent hover:shadow-gray-600/10 sm:gap-8 sm:flex transition duration-300 hover:z-10">
                 <div class="sm:w-2/6 rounded-3xl overflow-hidden transition-all duration-500 group-hover:rounded-xl">
                   <Image
                     src={hall.images[0]}
@@ -46,7 +46,7 @@ const HallPage = async() => {
                     <span class="flex items-center"> <GrStatusGood class="mr-1" />{hall.type} </span>
                     </span>
                   <h3 class="text-2xl font-semibold text-gray-800 flex items-center justify-between">
-                   {hall.hallName}  <span> <Link href="/"><button class="text-sm bg-orange-600 hover:bg-orange-700 text-white px-3 py-2 rounded-md flex items-center "> View <FaCircleArrowRight class="ml-1" /></button></Link>  </span>
+                   {hall.hallName}  <span> <Link href={`/hall/${hall._id}`}><button class="text-sm bg-orange-600 hover:bg-orange-700 text-white px-3 py-2 rounded-md flex items-center "> View <FaCircleArrowRight class="ml-1" /></button></Link>  </span>
                   </h3>
                   <p class="my-6 text-gray-600 ">
                    {hall.description.length>300 ? hall.description.slice(0,200)+'...': hall.description}
