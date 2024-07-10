@@ -17,7 +17,7 @@ const Facilities = ({ahall}) => {
 
 </div>
 
-<div class="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+<div class="mx-auto grid justify-center gap-4 grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
 
 <div
     class=" rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
