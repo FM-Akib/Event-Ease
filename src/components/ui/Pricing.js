@@ -1,6 +1,7 @@
 import React from 'react';
 import { PiCheckCircleDuotone } from "react-icons/pi";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
+import Link from 'next/link';
 
 const Pricing = ({ hall }) => {
   return (
@@ -61,11 +62,14 @@ const Pricing = ({ hall }) => {
                 <span>Night without Ac - {hall.price.nigthNonAc}৳</span>
               </li>
             </ul>
+
+          <Link href={`/bookhall/${hall._id}`}>  
             <button className="relative flex h-11 bg-emerald-700 hover:bg-emerald-600 rounded-md w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
               <span className="relative text-base font-semibold text-white flex items-center">
                 Book Now <IoArrowForwardCircleOutline className="ml-1 text-xl" />
               </span>
             </button>
+          </Link>
           </div>
         </div>
       </div>
