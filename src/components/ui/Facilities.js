@@ -20,66 +20,66 @@ const Facilities = ({ahall}) => {
 <div class="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
 
 <div
-    class="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
+    class=" rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
     <div class="flex  flex-col items-center justify-between rounded-md p-2">
-        <TbAirConditioning   class="h-12 w-12 fill-current" />
+        <TbAirConditioning   class="h-12 w-12 fill-current text-gray-600 " />
         <div class="space-y-1 mt-1 text-center ">
-            <h3 class="font-semibold">AC</h3>
+            <h3 class="font-semibold text-gray-500  ">AC</h3>
             <p class="text-md text-muted-foreground font-semibold ">{ahall.facilities.includes('AC')? <span class="text-emerald-500">Yes</span> : <span class="text-red-500">No</span>}</p>
         </div>
     </div>
 </div>
 
 <div
-    class="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
+    class=" rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
     <div class="flex  flex-col items-center  justify-between rounded-md p-2">
-        <MdTableBar class="h-12 w-12 fill-current" />
+        <MdTableBar class="h-12 w-12 fill-current text-gray-600" />
         <div class="space-y-1 mt-1 text-center  ">
-            <h3 class="font-semibold">Catering</h3>
+            <h3 class="font-semibold text-gray-500 ">Catering</h3>
             <p class="text-md font-semibold  ">{ahall.facilities.includes('Catering')? <span class="text-emerald-500">Yes</span> : <span class="text-red-500">No</span>}</p>
         </div>
     </div>
 </div>
 
 <div
-    class="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
+    class=" rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
     <div class="flex  flex-col items-center  justify-between rounded-md p-2">
-        <HiHome class="h-12 w-12 fill-current" />
+        <HiHome class="h-12 w-12 fill-current text-gray-600" />
         <div class="space-y-1 mt-1 text-center ">
-            <h3 class="font-semibold">CCTV</h3>
+            <h3 class="font-semibold text-gray-500 ">CCTV</h3>
             <p class="text-md font-semibold   text-muted-foreground">{ahall.facilities.includes('CCTV')? <span class="text-emerald-500">Yes</span> : <span class="text-red-500">No</span>}</p>
         </div>
     </div>
 </div>
 
 <div
-    class="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
+    class=" rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
     <div class="flex  flex-col items-center  justify-between rounded-md p-2">
-        <BsCarFrontFill class="h-12 w-12 fill-current" />
+        <BsCarFrontFill class="h-12 w-12 fill-current text-gray-600" />
         <div class="space-y-1 mt-1 text-center ">
-            <h3 class="font-semibold">Cooking</h3>
+            <h3 class="font-semibold text-gray-500 ">Cooking</h3>
             <p class="text-md font-semibold   text-muted-foreground">{ahall.facilities.includes('Cooking')? <span class="text-emerald-500">Yes</span> : <span class="text-red-500">No</span>}</p>
         </div>
     </div>
 </div>
 
 <div
-    class="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
+    class=" rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
     <div class="flex  flex-col items-center  justify-between rounded-md p-2">
-        <BiSolidBuildingHouse   class="h-12 w-12 fill-current" />
+        <BiSolidBuildingHouse   class="h-12 w-12 fill-current text-gray-600" />
         <div class="space-y-1 mt-1 text-center ">
-            <h3 class="font-semibold">Generator</h3>
+            <h3 class="font-semibold text-gray-500 ">Generator</h3>
             <p class="text-md font-semibold   text-muted-foreground">{ahall.facilities.includes('Electric Generator')? <span class="text-emerald-500">Yes</span> : <span class="text-red-500">No</span>}</p>
         </div>
     </div>
 </div>
 
 <div
-    class="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
+    class=" rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
     <div class="flex  flex-col items-center  justify-between rounded-md p-2">
-    <HiBuildingOffice2  class="h-12 w-12 fill-current" />
+    <HiBuildingOffice2  class="h-12 w-12 fill-current text-gray-600" />
         <div class="space-y-1 mt-1 text-center ">
-            <h3 class="font-semibold">Lift</h3>
+            <h3 class="font-semibold text-gray-500 ">Lift</h3>
             <p class="text-md font-semibold   text-muted-foreground">{ahall.facilities.includes('Lift')? <span class="text-emerald-500">Yes</span> : <span class="text-red-500">No</span>}</p>
         </div>
     </div>

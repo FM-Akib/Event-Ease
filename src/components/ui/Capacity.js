@@ -3,7 +3,8 @@ import { MdOutlineChair } from "react-icons/md";
 import { MdTableBar } from "react-icons/md";
 import { HiHome } from "react-icons/hi2";
 import { BsCarFrontFill } from "react-icons/bs";
-import { HiBuildingOffice2 } from "react-icons/hi2";
+import { MdOutlineNightsStay } from "react-icons/md";
+
 import { BiSolidBuildingHouse } from "react-icons/bi";
 
 
@@ -26,7 +27,7 @@ const Capacity = ({ahall}) => {
     <div
         class="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
         <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
-            <MdOutlineChair  class="h-12 w-12 fill-current" />
+            <MdOutlineChair  class="h-12 w-12 fill-current text-gray-700  " />
             <div class="space-y-2">
                 <h3 class="font-bold">Guest Capacity</h3>
                 <p class="text-md text-muted-foreground font-semibold text-emerald-500">{ahall.guestCapacity}</p>
@@ -37,7 +38,7 @@ const Capacity = ({ahall}) => {
     <div
         class="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
         <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
-            <MdTableBar class="h-12 w-12 fill-current" />
+            <MdTableBar class="h-12 w-12 fill-current text-gray-700 " />
             <div class="space-y-2">
                 <h3 class="font-bold">Table Batch</h3>
                 <p class="text-md font-semibold text-emerald-500 ">{ahall.tableBatch}</p>
@@ -48,7 +49,7 @@ const Capacity = ({ahall}) => {
     <div
         class="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
         <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
-            <HiHome class="h-12 w-12 fill-current" />
+            <HiHome class="h-12 w-12 fill-current text-gray-700 " />
             <div class="space-y-2">
                 <h3 class="font-bold">Areas</h3>
                 <p class="text-md font-semibold text-emerald-500  text-muted-foreground">{ahall.areas} sq ft.</p>
@@ -59,7 +60,7 @@ const Capacity = ({ahall}) => {
     <div
         class="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
         <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
-            <BsCarFrontFill class="h-12 w-12 fill-current" />
+            <BsCarFrontFill class="h-12 w-12 fill-current text-gray-700 " />
             <div class="space-y-2">
                 <h3 class="font-bold">Parking</h3>
                 <p class="text-md font-semibold text-emerald-500  text-muted-foreground">{ahall.parkingAreas}+</p>
@@ -70,7 +71,7 @@ const Capacity = ({ahall}) => {
     <div
         class="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
         <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
-            <BiSolidBuildingHouse   class="h-12 w-12 fill-current" />
+            <BiSolidBuildingHouse   class="h-12 w-12 fill-current text-gray-700 " />
             <div class="space-y-2">
                 <h3 class="font-bold">Floor</h3>
                 <p class="text-md font-semibold text-emerald-500  text-muted-foreground">{ahall.floor}</p>
@@ -81,10 +82,10 @@ const Capacity = ({ahall}) => {
     <div
         class="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-teal-200 p-2">
         <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
-        <HiBuildingOffice2  class="h-12 w-12 fill-current" />
+        <MdOutlineNightsStay   class="h-12 w-12 fill-current text-gray-700 " />
             <div class="space-y-2">
-                <h3 class="font-bold">Dedicated Building</h3>
-                <p class="text-md font-semibold text-emerald-500  text-muted-foreground">{ahall.dedicatedBuilding}</p>
+                <h3 class="font-bold">Shift</h3>
+                <p class="text-md font-semibold text-emerald-500  text-muted-foreground">{ahall.shift}</p>
             </div>
         </div>
     </div>

@@ -14,10 +14,10 @@
       "shift": "Noon, Night",
       "facilities": ["AC", "Catering", "CCTV", "Cooking", "Electric Generator", "Lift", "Parking", "WiFi"],
       "price": {
-        "day": 250000,
-        "nigth": 350000,
-        "ac": 200000,
-        "non-ac": 150000,
+        "dayAc": 250000,
+        "dayNonAc": 250000,
+        "nigthAc": 350000,
+        "nigthNonAc": 350000,        
         "discount": 10
       },
       "description": "BGB Banquet Hall rent, price, details. বিজিবি ব্যাঙ্কুয়েট হল Shimanto Shambhar Level-4, Road 2, Dhanmondi, Dhaka-1205. Inside Shimanto Shambhar Market.",
@@ -45,10 +45,10 @@
         "type": "Community Center",
         "facilities": ["AC", "Catering", "CCTV", "Cooking", "Electric Generator", "Lift", "Parking", "WiFi"],
         "price": {
-          "day": 250000,
-          "nigth": 350000,
-          "ac": 200000,
-          "non-ac": 150000,
+          "dayAc": 250000,
+          "dayNonAc": 250000,
+          "nigthAc": 350000,
+          "nigthNonAc": 350000,        
           "discount": 10
         },
         "description": "Raowa Convention Center rent, price, details. রাওয়া কনভেনশন সেন্টার Mohakhali, VIP Road, Dhaka 1206. RETIRED ARMED FORCES OFFICER’S WELFARE ASSOCIATION.",
