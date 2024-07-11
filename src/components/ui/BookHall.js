@@ -1,14 +1,26 @@
-// BookHall.jsx
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { BiSend } from "react-icons/bi";
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const BookHall = ({ hall }) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const [startDate, setStartDate] = useState(null);
 
   const onSubmit = async (data) => {
+    data.date = startDate;
     console.log(data);
+  };
+
+  const isBooked = (date) => {
+    const bookedDates = hall.bookedDates.map(bookedDate => new Date(bookedDate).toISOString().split('T')[0]);
+    return bookedDates.includes(date.toISOString().split('T')[0]);
+  };
+
+  const filterDates = (date) => {
+    return !isBooked(date);
   };
 
   return (
@@ -24,42 +36,52 @@ const BookHall = ({ hall }) => {
         </section>
         <p className="my-5 leading-relaxed text-gray-600">Fill the form, {hall.hallName} will get in touch with you shortly over the Phone.</p>
       
-      
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex gap-5">
             <div className="mb-4 flex-1">
               <label htmlFor="name" className="text-sm leading-7 text-gray-600">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="Your Name" {...register('name')} className="w-full rounded border border-gray-300 bg-white py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200" />
-              {errors.name && <span>This field is required</span>}
+              <input type="text" id="name" name="name" placeholder="Your Name" {...register('name', { required: true })} className="w-full rounded border border-gray-300 bg-white py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200" />
+              {errors.name && <span className="text-red-600">This field is required</span>}
             </div>
             <div className="mb-4 flex-1">
               <label htmlFor="email" className="text-sm leading-7 text-gray-600">Email</label>
-              <input type="email" id="email" name="email" placeholder="Your Email" {...register('email')} className="w-full rounded border border-gray-300 bg-white py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200" />
-              {errors.email && <span>This field is required</span>}
+              <input type="email" id="email" name="email" placeholder="Your Email" {...register('email', { required: true })} className="w-full rounded border border-gray-300 bg-white py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200" />
+              {errors.email && <span className="text-red-600">This field is required</span>}
             </div>
           </div>
           <div className="flex gap-5">
             <div className="mb-4 flex-1">
               <label htmlFor="contact" className="text-sm leading-7 text-gray-600">Contact Number</label>
-              <input type="text" id="contact" name="contact" placeholder="Your contact number" {...register('contact')} className="w-full rounded border border-gray-300 bg-white py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200" />
-              {errors.contact && <span>This field is required</span>}
+              <input type="text" id="contact" name="contact" placeholder="Your contact number" {...register('contact', { required: true })} className="w-full rounded border border-gray-300 bg-white py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200" />
+              {errors.contact && <span className="text-red-600">This field is required</span>}
             </div>
             <div className="mb-4 flex-1">
               <label htmlFor="options" className="text-sm leading-7 text-gray-600">Booking Type</label>
-              <select id="options" name="options" {...register('options')} className="w-full rounded border border-gray-300 bg-white py-2 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200">
+              <select id="options" name="options" {...register('options', { required: true })} className="w-full rounded border border-gray-300 bg-white py-2 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200">
                 <option value="" disabled selected>Select an option</option>
                 <option value="Day with AC">Day with AC</option>
                 <option value="Day without AC">Day without AC</option>
                 <option value="Night with AC">Night with AC</option>
                 <option value="Night without AC">Night without AC</option>
               </select>
-              {errors.options && <span>This field is required</span>}
+              {errors.options && <span className="text-red-600">This field is required</span>}
             </div>
+          </div>
+          <div className="mb-4">
+            <label htmlFor="date" className="text-sm leading-7 text-gray-600">Select Date</label>
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+              filterDate={filterDates}
+              placeholderText="Select a date"
+              className="w-full rounded border border-gray-300 bg-white py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+            />
+            {errors.date && <span className="text-red-600">This field is required</span>}
           </div>
           <div className="mb-4">
             <label htmlFor="message" className="text-sm leading-7 text-gray-600">Message</label>
             <textarea id="message" name="message" placeholder="Message us about your requirement" {...register('message')} className="h-32 w-full resize-none rounded border border-gray-300 bg-white py-1 px-3 text-base leading-6 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"></textarea>
-            {errors.message && <span>This field is required</span>}
+            {errors.message && <span className="text-red-600">This field is required</span>}
           </div>
           <button type="submit" className="rounded border-0 bg-[#1F2937] py-2 px-6 text-lg text-white hover:bg-[#303d48] focus:outline-none flex justify-center items-center">Send<BiSend className='ml-1' />
           </button>

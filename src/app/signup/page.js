@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { auth } from '../firebase/config';
 import {useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth'
 import {  signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { PiBuildingOfficeDuotone } from "react-icons/pi";
 
 const SignupPage = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -38,6 +39,14 @@ const SignupPage = () => {
                     <div className="w-full mx-auto flex items-center justify-center space-x-4">
                       <span className="w-max text-sm font-semibold tracking-wide text-cyan-700 flex items-center justify-center">
                         <FcGoogle className="mr-1 text-2xl" /> Sign up with Google
+                      </span>
+                    </div>
+                  </button>
+
+                  <button  className="mt-2 w-full h-11 rounded-xl border border-gray-300/75 bg-white px-6 transition active:bg-gray-50">
+                    <div className="w-full mx-auto flex items-center justify-center space-x-4">
+                      <span className="w-max text-sm font-semibold tracking-wide text-cyan-700 flex items-center justify-center">
+                        <PiBuildingOfficeDuotone className="mr-1 text-2xl" /> Sign up as a Event Hall
                       </span>
                     </div>
                   </button>

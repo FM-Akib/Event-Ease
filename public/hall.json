@@ -20,6 +20,11 @@
         "nigthNonAc": 350000,        
         "discount": 10
       },
+      "bookedDates": [
+      "2024-07-15T00:00:00.000Z",
+      "2024-07-20T00:00:00.000Z",
+      "2024-07-25T00:00:00.000Z"
+      ],
       "description": "BGB Banquet Hall rent, price, details. বিজিবি ব্যাঙ্কুয়েট হল Shimanto Shambhar Level-4, Road 2, Dhanmondi, Dhaka-1205. Inside Shimanto Shambhar Market.",
       "history": "Established in 1990, this hall has hosted numerous prestigious events.",
       "floor": 2,
@@ -51,6 +56,11 @@
           "nigthNonAc": 350000,        
           "discount": 10
         },
+        "bookedDates": [
+          "2024-07-15T00:00:00.000Z",
+          "2024-07-20T00:00:00.000Z",
+          "2024-07-25T00:00:00.000Z"
+          ],
         "description": "Raowa Convention Center rent, price, details. রাওয়া কনভেনশন সেন্টার Mohakhali, VIP Road, Dhaka 1206. RETIRED ARMED FORCES OFFICER’S WELFARE ASSOCIATION.",
         "history": "Established in 1990, this hall has hosted numerous prestigious events.",
         "floor": 2,
