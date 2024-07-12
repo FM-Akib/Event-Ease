@@ -7,7 +7,7 @@ import {useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth'
 import {  signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { PiBuildingOfficeDuotone } from "react-icons/pi";
 
-const SignupPage = () => {
+const SignuphallPage = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const provider = new GoogleAuthProvider();
   const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
@@ -33,8 +33,20 @@ const SignupPage = () => {
           <div className="mx-auto h-full sm:w-3/12">
             <div className="m-auto py-12">
               <div className="mt-12 rounded-3xl border bg-gray-50/85 -mx-6 sm:-mx-10 p-8 sm:p-10">
-                <h3 className="text-2xl font-semibold text-gray-700">Create a new account</h3>
-                <div className="mt-12 flex flex-wrap">
+                {/* <h3 className="text-2xl font-semibold text-gray-700">List your hall here...</h3> */}
+
+                
+            <section className="w-full max-w-5xl mx-auto px-5 lg:px-0">
+            <div className="bg-gray-800 p-6 md:p-10 rounded-2xl mx-auto flex flex-col gap-y-5 justify-center items-center relative">
+                <svg className="absolute right-0 top-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" width="227" height="223" viewBox="0 0 227 223" fill="none">
+                <path opacity="0.21" d="M163.766 -28.3772C163.766 -31.8935 161.662 -35.0699 158.422 -36.4473C155.181 -37.8247 151.429 -37.1368 148.891 -34.6996L117.649 -4.71041C71.1338 39.9411 31.8296 91.5182 1.13522 148.185C0.412538 149.459 0 150.932 0 152.501C0 157.345 3.9335 161.271 8.78571 161.271H84.5186V287.378C84.5186 290.852 86.5716 293.998 89.754 295.401C92.9365 296.805 96.6487 296.201 99.2207 293.862L113.199 281.15C162.13 236.652 203.656 184.662 236.217 127.133L244.863 111.856C246.4 109.141 246.377 105.814 244.802 103.121C243.228 100.427 240.339 98.7703 237.214 98.7703H163.766V-28.3772Z" fill="#F2F9FB" fill-opacity="0.4" />
+                </svg>
+                <h3 className="text-2xl md:text-3xl lg:text-3xl font-bold text-white text-center">Listing <span className=" font-semibold text-yellow-200">Your Hall</span></h3>
+            </div>
+            </section>
+
+
+                <div className="mt-5 flex flex-wrap">
                   <button onClick={()=>{signInWithPopup(auth, provider)}} className="w-full h-11 rounded-xl border border-gray-300/75 bg-white px-6 transition active:bg-gray-50">
                     <div className="w-full mx-auto flex items-center justify-center space-x-4">
                       <span className="w-max text-sm font-semibold tracking-wide text-cyan-700 flex items-center justify-center">
@@ -43,7 +55,7 @@ const SignupPage = () => {
                     </div>
                   </button>
 
-                  <Link href="/signuphall" className="w-full">
+                  {/* <Link href="/signuphall" className="w-full">
                   <button  className="mt-2 w-full h-11 rounded-xl border border-gray-300/75 bg-white px-6 transition active:bg-gray-50">
                     <div className="w-full mx-auto flex items-center justify-center space-x-4">
                       <span className="w-max text-sm font-semibold tracking-wide text-cyan-700 flex items-center justify-center">
@@ -51,7 +63,7 @@ const SignupPage = () => {
                       </span>
                     </div>
                   </button>
-                  </Link>
+                  </Link> */}
                 
                 </div>
 
@@ -117,4 +129,4 @@ const SignupPage = () => {
   );
 };
 
-export default SignupPage;
+export default SignuphallPage;
